@@ -1,6 +1,6 @@
 # digital-electronics-1
 
-__________# HEADER__________
+# HEADER
 
 # H1
 ## H2
@@ -18,7 +18,7 @@ Alt-H2
 ------
 
 
-__________# EMPHASIS__________ - Ударение, акцент
+# EMPHASIS - Ударение, акцент
 
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
@@ -28,7 +28,7 @@ Combined emphasis with **asterisks and _underscores_**.
 
 Strikethrough uses two tildes. ~~Scratch this.~~
 
-__________# LISTS__________ - Списки
+# LISTS - Списки
 
 1. First ordered list item
 2. Another item
@@ -48,7 +48,7 @@ __________# LISTS__________ - Списки
 + Or pluses
 
 
-__________# LINKS__________
+# LINKS
 
 [I'm an inline-style link](https://www.google.com)
 
@@ -73,7 +73,7 @@ Some text to show that the reference links can follow later.
 [link text itself]: http://www.reddit.com
 
 
-__________# IMAGES__________
+# IMAGES
 
 Here's our logo (hover to see the title text):
 
@@ -86,4 +86,3 @@ Reference-style:
 [logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
 
 
-__________
