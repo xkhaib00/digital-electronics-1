@@ -1,0 +1,31 @@
+## Windows Git Bash:
+## Note that in the lab, home folders are located in Documents on disk D:
+$ cd d:/Documents/
+$ mkdir your-name
+$ cd your-name/
+
+$ git clone https://github.com/your-github-account/digital-electronics-1.git
+$ cd digital-electronics-1/
+$ ls
+LICENSE  README.md
+
+## Windows Git Bash or Linux:
+$ mkdir labs
+$ cd labs/
+$ mkdir 01-gates
+
+## Windows Git Bash or Linux:
+$ git status
+$ git add -A
+$ git status
+$ git commit -m "[LAB] Creating 01-gates lab"
+$ git status
+$ git push
+$ git status
+
+
+\begin{align*}
+    f(c,b,a) =&~ \overline{b}\,a + \overline{c}\,\overline{b}\\
+    f(c,b,a)_{\textup{NAND}} =&\\
+    f(c,b,a)_{\textup{NOR}} =&\\
+\end{align*}
