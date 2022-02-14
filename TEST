@@ -1,31 +1,17 @@
-## Windows Git Bash:
-## Note that in the lab, home folders are located in Documents on disk D:
-$ cd d:/Documents/
-$ mkdir your-name
-$ cd your-name/
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 
-$ git clone https://github.com/your-github-account/digital-electronics-1.git
-$ cd digital-electronics-1/
-$ ls
-LICENSE  README.md
+entity nand_nor_top is
+    Port ( A1 : in  STD_LOGIC;      -- NAND gate input 1
+           A2 : in  STD_LOGIC;      -- NAND gate input 2
+           X1 : out  STD_LOGIC;     -- NAND gate output
+           B1 : in  STD_LOGIC;      -- NOR gate input 1
+           B2 : in  STD_LOGIC;      -- NOR gate input 2
+           Y1 : out  STD_LOGIC);    -- NOR gate output
+end nand_nor_top;
 
-## Windows Git Bash or Linux:
-$ mkdir labs
-$ cd labs/
-$ mkdir 01-gates
-
-## Windows Git Bash or Linux:
-$ git status
-$ git add -A
-$ git status
-$ git commit -m "[LAB] Creating 01-gates lab"
-$ git status
-$ git push
-$ git status
-
-
-\begin{align*}
-    f(c,b,a) =&~ \overline{b}\,a + \overline{c}\,\overline{b}\\
-    f(c,b,a)_{\textup{NAND}} =&\\
-    f(c,b,a)_{\textup{NOR}} =&\\
-\end{align*}
+architecture Behavioral of nand_nor_top is
+begin
+X1 <= A1 nand A2;    -- 2 input NAND gate
+Y1 <= B1 nor B2;     -- 2 input NOR gate
+end Behavioral;
