@@ -40,7 +40,7 @@ Combined emphasis with **asterisks and _underscores_**.
 
 Strikethrough uses two tildes. ~~Scratch this.~~
 
-# LISTS - Списки
+# LISTS 
 
 1. First ordered list item
 2. Another item
