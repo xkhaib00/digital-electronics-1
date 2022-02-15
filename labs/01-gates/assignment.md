@@ -1,8 +1,4 @@
-# LOL
-
 # Lab 1: Khaibullin
-
-# LOL
 
 ### De Morgan's laws
 
