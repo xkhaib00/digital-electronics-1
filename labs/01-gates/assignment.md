@@ -1,4 +1,4 @@
-# Lab 1: Khaibullin
+# Lab 1: KHAIBULLIN Rishat
 
 ### De Morgan's laws
 
