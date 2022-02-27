@@ -23,32 +23,37 @@
    Last two digits of my student ID: **195589**
 
 ```vhdl
-    p_stimulus : process
-    begin
-        -- Report a note at the beginning of stimulus process
-        report "Stimulus process started" severity note;
+     p_stimulus : process
+ begin
+     -- Report a note at the beginning of stimulus process
+     report "Stimulus process started" severity note;
 
-        -- First test case
-        s_b <= "BCD_OF_YOUR_SECOND_LAST_ID_DIGIT"; -- Such as "1000" if ID = xxxx89
-        s_a <= "BCD_OF_YOUR_LAST_ID_DIGIT";        -- Such as "1001" if ID = xxxx89
-        wait for 100 ns;
-        -- Expected output
-        assert ((s_B_greater_A = 'WRITE_CORRECT_VALUE_HERE') and
-                (s_B_equals_A  = 'WRITE_CORRECT_VALUE_HERE') and
-                (s_B_less_A    = 'WRITE_CORRECT_VALUE_HERE'))
-        -- If false, then report an error
-        report "Input combination COMPLETE_THIS_TEXT FAILED" severity error;
+     -- First test case ...
+     s_b <= "00"; 
+     s_a <= "01"; 
+     wait for 100 ns;
+     -- ... and its expected outputs
+     assert ((s_B_greater_A = '0') and
+             (s_B_equals_A  = '0') and
+             (s_B_less_A    = '1'))
+     -- If false, then report an error
+     -- If true, then do not report anything
+     report "Input combination 00, 00 FAILED" severity error;
 
-        -- Report a note at the end of stimulus process
-        report "Stimulus process finished" severity note;
-        wait;
-    end process p_stimulus;
+
+     -- WRITE OTHER TEST CASES HERE
+
+
+     -- Report a note at the end of stimulus process
+     report "Stimulus process finished" severity note;
+     wait; -- Data generation process is suspended forever
+ end process p_stimulus;
 ```
 
 2. Text console screenshot during your simulation, including reports.
 
-   ![your figure]()
+   ![your figure](4.png)
 
 3. Link to your public EDA Playground example:
 
-   [https://www.edaplayground.com/...](https://www.edaplayground.com/...)
+   [https://www.edaplayground.com/...](https://www.edaplayground.com/x/PBD3)
