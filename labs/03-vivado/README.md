@@ -37,6 +37,8 @@ The Nexys A7 board provides sixteen switches and LEDs. The switches can be used 
 
 1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of slide switches and LEDs, ie to which FPGA pins are connected and how. Draw the schematic with LEDs and switches.
 
+![pic](n4r.png)
+
 2. **Optional task:** Follow the instructions for [Windows or Linux](https://github.com/tomas-fryza/digital-electronics-1/wiki/List-of-versions), download and install Vivado Design Suite. *Note: The online EDA Playground tool can still be used to simulate designs without implementation in the target hardware.*
 
 <a name="part1"></a>
