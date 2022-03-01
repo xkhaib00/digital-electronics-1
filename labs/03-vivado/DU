@@ -1,0 +1,28 @@
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity multiplexor_3bit_4to1 is
+     port(
+        a_i           : in  std_logic_vector(3 - 1 downto 0); --- 3bit Vstup
+        b_i           : in  std_logic_vector(3 - 1 downto 0);
+        c_i           : in  std_logic_vector(3 - 1 downto 0);
+        d_i           : in  std_logic_vector(3 - 1 downto 0);
+        sel_i         : in  std_logic_vector(2 - 1 downto 0); --- 2bit Selekcni Vstup 
+        f_o           : out std_logic_vector(3 - 1 downto 0) --- 3bit Vystup   
+    );
+end entity multiplexor_3bit_4to1;
+
+architecture Behavioral of multiplexor_3bit_4to1 is
+begin
+   with sel_i select
+    f_o <= a_i when "00",    -- If sel_i = "00" then f_o = a_i
+           b_i when "01",    -- If sel_i = "01" then f_o = b_i
+           c_i when "10",    -- If sel_i = "10" then f_o = c_i
+           d_i when others;  -- If sel_i = "11" then f_o = d_i
+           
+end architecture Behavioral;
+
+
+1. Kod
+2. Formu
