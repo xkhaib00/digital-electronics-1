@@ -31,3 +31,55 @@ end architecture Behavioral;
 a_i [0]
 a_i [1]
 a_i [2]
+
+
+
+
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity tb_mux_3bit_4to1 is
+    -- Entity of testbench is always empty
+end entity tb_mux_3bit_4to1;
+
+architecture testbench of tb_mux_3bit_4to1 is
+
+    -- Local signals
+    signal s_a           : std_logic_vector(3 - 1 downto 0);
+    signal s_b           : std_logic_vector(3 - 1 downto 0);
+    signal s_c           : std_logic_vector(3 - 1 downto 0);
+    signal s_d           : std_logic_vector(3 - 1 downto 0);
+    signal s_sel         : std_logic_vector(2 - 1 downto 0);
+    signal s_f           : std_logic_vector(3 - 1 downto 0);
+
+begin
+
+    uut_mux_3bit_4to1 : entity work.multiplexor_3bit_4to1
+        port map(
+            a_i           => s_a,
+            b_i           => s_b,
+            c_i           => s_c,
+            d_i           => s_d,
+            sel_i         => s_sel,
+            f_i           => s_f
+        );
+ p_stimulus : process
+ begin
+     report "Stimulus process started" severity note;
+
+     s_b <= "00"; 
+     s_a <= "01"; 
+     wait for 100 ns;
+     -- ... and its expected outputs
+     assert ((s_f = '0') and
+             (s_B_equals_A  = '0') and
+             (s_B_less_A    = '1'))
+     -- If false, then report an error
+     -- If true, then do not report anything
+    -- report "Input combination 00, 00 FAILED" severity error;
+
+
+     report "Stimulus process finished" severity note;
+ end process p_stimulus;
+
+end architecture testbench;
