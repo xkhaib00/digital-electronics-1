@@ -1,4 +1,3 @@
-
 # Lab 6: Binary counter
 
 <!--
@@ -8,8 +7,6 @@
   CZ.02.2.69/0.0/0.0/18_056/0013325
 </p>
 -->
-
-![Nexys A7 board](images/nexys_a7_counter.jpg)
 
 ### Learning objectives
 
@@ -38,13 +35,21 @@ The purpose of this laboratory exercise is to become familiar with the creation 
 
 The Nexys A7 board provides five push buttons for user applications.
 
-1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of these push buttons, ie to which FPGA pins are connected and how (schema). What logic/voltage value do the buttons generate when not pressed and what value when the buttons are pressed?
+1. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out the connection of these push buttons, ie to which FPGA pins are connected and how (schema). What logic/voltage value do the buttons generate when not pressed and what value when the buttons are pressed? Draw the schematic with push buttons.
 
 2. Calculate how many periods of clock signal with frequency of 100&nbsp;MHz contain time intervals 2&nbsp;ms, 4&nbsp;ms, 10&nbsp;ms, 250&nbsp;ms, 500&nbsp;ms, and 1&nbsp;s. Write values in decimal, binary, and hexadecimal forms.
 
    &nbsp;
-   ![Clock period](images/freq.png)
+   ![clock period](images/freq.png)
    &nbsp;
+
+   ![number of periods](images/periods.png)
+   &nbsp;
+   <!--
+   https://editor.codecogs.com/
+   T_{clk}=\frac{1}{f_{clk}}=
+   \textup{number of clk period} = \frac{\textup{time interval}}{T_{clk}}=
+   -->
 
    | **Time interval** | **Number of clk periods** | **Number of clk periods in hex** | **Number of clk periods in binary** |
    | :-: | :-: | :-: | :-: |
@@ -67,27 +72,27 @@ The Nexys A7 board provides five push buttons for user applications.
 
 To drive another logic in the design (with slower clock), it is better to generate a **clock enable signal** (see figure bellow) instead of creating another clock domain (using clock dividers) that would cause timing issues or clock domain crossing problems such as metastability, data loss, and data incoherency.
 
-![Clock enable](images/wavedrom_clock_enable.png)
+  ![Clock enable](images/wavedrom_clock_enable.png)
 
-> The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows (ticks -1, 10, 11 and 12 were manually adjusted afterwards):
->
-```javascript
-{
-  signal:
-  [
-    {name: "clk",  wave: 'P............'},
-    {name: "ce_o", wave: 'lhl........hl'},
-  ],
-  head:
+  > The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows (ticks -1, 10, 11 and 12 were manually adjusted afterwards):
+  >
+  ```javascript
   {
-    tick: -1,
-  },
-  foot:
-  {
-    text:'g_MAX = 10',
-  },
-}
-```
+    signal:
+    [
+      {name: "clk",  wave: 'P............'},
+      {name: "ce_o", wave: 'lhl........hl'},
+    ],
+    head:
+    {
+      tick: -1,
+    },
+    foot:
+    {
+      text:'g_MAX = 10',
+    },
+  }
+  ```
 
 1. Perform the following steps to simulate the clock enable circuit in Vivado.
 
@@ -99,7 +104,7 @@ To drive another logic in the design (with slower clock), it is better to genera
 
    The default simulation run time is set to 1000&nbsp;ns in Vivado. Note that, you can change it in the menu **Tools > Settings...**
 
-   ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
+      ![Specify simulation run time in Vivado](images/screenshot_vivado_run_time.png)
 
 <a name="part3"></a>
 
@@ -114,13 +119,13 @@ To drive another logic in the design (with slower clock), it is better to genera
    3. Create a VHDL [simulation source](https://www.edaplayground.com/x/5bgq) `tb_cnt_up_down`.
    4. Change the testbench you want to simulate, right click to file name and select `Set as Top`. Run the simulation. Verify the meaning of the constant `c_CNT_WIDTH` and reset generation process.
 
-   ![Set as Top](images/screenshot_vivado_set_top.png)
+     ![Set as Top](images/screenshot_vivado_set_top.png)
 
    5. Complete architecture of the counter, make it bidirectional, and simulate again.
 
    Note that for any vector, it is possible to change the numeric system in the simulation which represents the current value. To do so, right-click the vector name (here `s_cnt[4:0]`) and select **Radix > Unsigned Decimal** from the context menu. You can change the vector color by **Signal Color** as well.
 
-   ![Change radix](images/screenshot_vivado_radix.png)
+     ![Change radix](images/screenshot_vivado_radix.png)
 
 <a name="part4"></a>
 
@@ -131,90 +136,93 @@ To drive another logic in the design (with slower clock), it is better to genera
    1. Create a new VHDL design source `top` in your project.
    2. Use **Define Module** dialog and define I/O ports of entity `top` as follows.
 
-   | **Port name** | **Direction** | **Type** | **Description** |
-   | :-: | :-: | :-: | :-- |
-   | `CLK100MHZ` | in  | `std_logic` | Main clock |
-   | `BTNC`      | in  | `std_logic` | Synchronous reset |
-   | `SW`        | in  | `std_logic_vector(1 - 1 downto 0)` | Counter direction |
-   | `LED`       | out | `std_logic_vector(4 - 1 downto 0)` | Counter value LED indicators |
-   | `CA`        | out | `std_logic` | Cathod A |
-   | `CB`        | out | `std_logic` | Cathod B |
-   | `CC`        | out | `std_logic` | Cathod C |
-   | `CD`        | out | `std_logic` | Cathod D |
-   | `CE`        | out | `std_logic` | Cathod E |
-   | `CF`        | out | `std_logic` | Cathod F |
-   | `CG`        | out | `std_logic` | Cathod G |
-   | `AN`        | out | `std_logic_vector(8 - 1 downto 0)` | Common anode signals to individual displays |
+      | **Port name** | **Direction** | **Type** | **Description** |
+      | :-: | :-: | :-- | :-- |
+      | `CLK100MHZ` | in  | `std_logic` | Main clock |
+      | `BTNC`      | in  | `std_logic` | Synchronous reset |
+      | `SW`        | in  | `std_logic` | Counter direction |
+      | `LED`       | out | `std_logic_vector(3 downto 0)` | Counter value LED indicators |
+      | `CA`        | out | `std_logic` | Cathod A |
+      | `CB`        | out | `std_logic` | Cathod B |
+      | `CC`        | out | `std_logic` | Cathod C |
+      | `CD`        | out | `std_logic` | Cathod D |
+      | `CE`        | out | `std_logic` | Cathod E |
+      | `CF`        | out | `std_logic` | Cathod F |
+      | `CG`        | out | `std_logic` | Cathod G |
+      | `AN`        | out | `std_logic_vector(7 downto 0)` | Common anode signals to individual displays |
 
    3. Use [direct instantiation](https://github.com/tomas-fryza/digital-electronics-1/wiki/Direct-instantiation) and define an architecture of the top level: complete instantiation (copy) of `clock_enable`, `cnt_up_down`, and `hex_7seg` entities. Copy source file `hex_7seg.vhd` from the previous laboratories to the `counter/counter.srcs/sources_1/new/` source folder and add it to the project.
 
-  ```vhdl
-  ------------------------------------------------------------------------
-  -- Architecture body for top level
-  ------------------------------------------------------------------------
-  architecture Behavioral of top is
+      ```vhdl
+      ------------------------------------------------------------------------
+      -- Architecture body for top level
+      ------------------------------------------------------------------------
+      architecture Behavioral of top is
 
-    -- Internal clock enable
-    signal s_en  : std_logic;
-    -- Internal counter
-    signal s_cnt : std_logic_vector(4 - 1 downto 0);
+        -- Internal clock enable
+        signal s_en  : std_logic;
+        -- Internal counter
+        signal s_cnt : std_logic_vector(4 - 1 downto 0);
 
-  begin
+      begin
 
-    --------------------------------------------------------------------
-    -- Instance (copy) of clock_enable entity
-    clk_en0 : entity work.clock_enable
-        generic map(
-            --- WRITE YOUR CODE HERE
-        )
-        port map(
-            --- WRITE YOUR CODE HERE
-        );
+        --------------------------------------------------------------------
+        -- Instance (copy) of clock_enable entity
+        clk_en0 : entity work.clock_enable
+            generic map(
+                --- WRITE YOUR CODE HERE
+            )
+            port map(
+                --- WRITE YOUR CODE HERE
+            );
 
-    --------------------------------------------------------------------
-    -- Instance (copy) of cnt_up_down entity
-    bin_cnt0 : entity work.cnt_up_down
-        generic map(
-            --- WRITE YOUR CODE HERE
-        )
-        port map(
-            --- WRITE YOUR CODE HERE
-        );
+        --------------------------------------------------------------------
+        -- Instance (copy) of cnt_up_down entity
+        bin_cnt0 : entity work.cnt_up_down
+           generic map(
+                --- WRITE YOUR CODE HERE
+            )
+            port map(
+                --- WRITE YOUR CODE HERE
+            );
 
-    -- Display counter values on LEDs
-    LED(3 downto 0) <= s_cnt;
+        -- Display counter values on LEDs
+        LED(3 downto 0) <= s_cnt;
 
-    --------------------------------------------------------------------
-    -- Instance (copy) of hex_7seg entity
-    hex2seg : entity work.hex_7seg
-        port map(
-            hex_i    => s_cnt,
-            seg_o(6) => CA,
-            seg_o(5) => CB,
-            seg_o(4) => CC,
-            seg_o(3) => CD,
-            seg_o(2) => CE,
-            seg_o(1) => CF,
-            seg_o(0) => CG
-        );
+        --------------------------------------------------------------------
+        -- Instance (copy) of hex_7seg entity
+        hex2seg : entity work.hex_7seg
+            port map(
+                hex_i    => s_cnt,
+                seg_o(6) => CA,
+                seg_o(5) => CB,
+                seg_o(4) => CC,
+                seg_o(3) => CD,
+                seg_o(2) => CE,
+                seg_o(1) => CF,
+                seg_o(0) => CG
+            );
 
-    -- Connect one common anode to 3.3V
-    AN <= b"1111_1110";
+        -- Connect one common anode to 3.3V
+        AN <= b"1111_1110";
 
-  end architecture Behavioral;
-  ```
+      end architecture Behavioral;
+      ```
   
-  ![Top level](images/top_schema_4bit_cnt.jpg)
+     ![Top level](images/top_schema_4bit_cnt.jpg)
 
    4. Create a new [constraints XDC](https://github.com/Digilent/digilent-xdc/blob/master/Nexys-A7-50T-Master.xdc) file: `nexys-a7-50t` and uncomment used pins according to the `top` entity.
    5. Compile the project and download the generated bitstream `counter/counter.runs/impl_1/top.bit` into the FPGA chip.
    6. Test the functionality of the 4-bit counter by toggling the switch, pressing the button and observing the display and LEDs.
+
+      ![Nexys A7 board](images/nexys_a7_counter.jpg)
+
    7. Use **IMPLEMENTATION > Open Implemented Design > Schematic** to see the generated structure.
    8. Use digital oscilloscope or logic analyser and display counter values via Pmod ports. See [schematic](https://github.com/tomas-fryza/digital-electronics-1/blob/master/Docs/nexys-a7-sch.pdf) or [reference manual](https://reference.digilentinc.com/reference/programmable-logic/nexys-a7/reference-manual) of the Nexys A7 board and find out to which FPGA pins Pmod ports JA, JB, JC, and JD are connected.
 
-   ![Pmod port](images/pmod.png)
+      ![Pmod port](images/pmod.png)
 
-   ![Binary counter verification](images/logic_analyser.jpg)
+      ![Binary counter verification](images/logic_analyser.jpg)
 
 ## Synchronize repositories
 
