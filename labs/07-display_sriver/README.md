@@ -42,7 +42,7 @@ Due to the physiological properties of human vision, it is necessary that the ti
 
   ![https://lastminuteengineers.com/seven-segment-arduino-tutorial/](../04-segment/images/7-Segment-Display-Number-Formation-Segment-Contol.png)
 
-  ![Timing of seven-segment display](images/wavedrom_7-segment.png)
+  ![Timing of seven-segment display](du2.PNG)
 
   > The figure above was created in [WaveDrom](https://wavedrom.com/) digital timing diagram online tool. The figure source code is as follows:
   >
@@ -52,9 +52,9 @@ Due to the physiological properties of human vision, it is necessary that the ti
   [
     ['Digit position',
       {name: 'Common anode: AN(3)', wave: 'xx01..01..01'},
-      {name: 'AN(2)', wave: 'xx101'},
-      {name: 'AN(1)', wave: 'xx1.'},
-      {name: 'AN(0)', wave: 'xx1.'},
+      {name: 'AN(2)', wave: 'xx101..01..0'},
+      {name: 'AN(1)', wave: 'xx1.01..01..'},
+      {name: 'AN(0)', wave: 'xx1..01..01.'},
     ],
     ['Seven-segment data',
       {name: '4-digit value to display', wave: 'xx3333555599', data: ['3','1','4','2','3','1','4','2','3','1']},
