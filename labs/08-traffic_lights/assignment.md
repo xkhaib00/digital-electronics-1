@@ -51,7 +51,6 @@
                             s_cnt <= c_ZERO;
                         end if;
                      when WEST_WAIT =>
-                        -- WRITE OTHER STATES HERE
                         if (s_cnt < c_DELAY_2SEC) then
                             s_cnt <= s_cnt + 1;
                         else
@@ -61,7 +60,6 @@
                             s_cnt <= c_ZERO;
                         end if;
                      when STOP2 =>
-                        -- WRITE OTHER STATES HERE
                         if (s_cnt < c_DELAY_1SEC) then
                             s_cnt <= s_cnt + 1;
                         else
@@ -71,7 +69,6 @@
                             s_cnt <= c_ZERO;
                         end if;
                      when SOUTH_GO =>
-                        -- WRITE OTHER STATES HERE
                         if (s_cnt < c_DELAY_4SEC) then
                             s_cnt <= s_cnt + 1;
                         else
@@ -81,7 +78,6 @@
                             s_cnt <= c_ZERO;
                         end if; 
                      when SOUTH_WAIT =>
-                        -- WRITE OTHER STATES HERE
                         if (s_cnt < c_DELAY_2SEC) then
                             s_cnt <= s_cnt + 1;
                         else
