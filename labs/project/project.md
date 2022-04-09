@@ -2,10 +2,9 @@
 
 ### Team members
 
-* Member 1 (responsible for xxx)
-* Member 2 (responsible for xxx)
-* Member 3 (responsible for xxx)
-* ...
+* Štěpán Večeřa (responsible for xxx)
+* Romain Fresneau (responsible for xxx)
+* Rishat Khaibullin (responsible for xxx)
 
 ### Table of contents
 
