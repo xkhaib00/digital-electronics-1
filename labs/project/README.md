@@ -44,3 +44,48 @@ Once the entire data word is shifted into the register, the receive circuitry ve
 It then outputs the received data on the rx_data port . A high-to-low transition on the rx_busy port signifies to the user logic that new receive data is now available.
 
 ![image](images/UARTRX.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## ADVANTAGES AND DISADVANTAGES OF UARTS
+There is no perfect communication protocol, although UARTs are pretty good at what they do. Here are some advantages and disadvantages to help you decide whether they are appropriate for your project:
+
+### ADVANTAGES
+    • Only two wires are used.
+    • Has a parity bit that can be used to check for errors.
+    • The data packet's structure can be modified as long as both sides are prepared.
+    • This approach is well-documented and commonly used.
+### DISADVANTAGES
+    • The data frame size is restricted to a maximum of 9 bits.
+    • Multiple slave or master systems are not supported.
+    • Each UART's baud rates must be within ten percent of one another.
