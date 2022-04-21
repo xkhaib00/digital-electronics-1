@@ -94,3 +94,10 @@ There is no perfect communication protocol, although UARTs are pretty good at wh
     • The data frame size is restricted to a maximum of 9 bits.
     • Multiple slave or master systems are not supported.
     • Each UART's baud rates must be within ten percent of one another.
+    
+    
+    
+    
+    IMPORTANT LINKS :
+    https://forum.digikey.com/t/uart-vhdl/12670
+    https://www.nandland.com/vhdl/modules/module-uart-serial-port-rs232.html
