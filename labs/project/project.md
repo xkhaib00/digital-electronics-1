@@ -108,7 +108,7 @@ It then outputs the received data on the rx_data port . A high-to-low transition
 
 ## TOP module description and simulations
 
-Write your text here.
+![image](images/block.jpg)
 
 <a name="video"></a>
 
