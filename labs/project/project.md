@@ -92,6 +92,8 @@ Along with the start and stop bits. The baud pulse then allows the system clock 
 When the transmission is complete and the circuit is ready to take new data to send, the TX Done output informs the user logic.
 
 ![image](images/UARTTX.png)
+
+
 By implementing our testbench, we can obtain this simulation for the transmitter part :
 
 ![image](images/Sim_transmitter.PNG)
