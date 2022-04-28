@@ -58,6 +58,9 @@ We performed the following steps to implement the UART design on the Nexys A7 bo
 
 For this design, we are only in half duplex, wich means only one of the board can transmit data. That is why we only use two wires, one for the ground and one for transmitting data in parrallel.
 
+![image](images/20220428_140240(0).jpg)
+
+
 The transmitting board use switches from 0 to 7 to transmit data, the receiving board use LED to let the user see that the data are correctly read.
 Here you can see the block diagram of our complete solution :
 
