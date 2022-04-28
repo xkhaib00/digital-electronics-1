@@ -47,6 +47,8 @@ There is no perfect communication protocol, although UARTs are pretty good at wh
     • Each UART's baud rates must be within ten percent of one another.
     • Do not have full duplex mode
     
+This UART is a programmable logic component with a simple asynchronous serial interface that allows for communication. The system clock, baud rate, data length, parity scheme, and oversampling rate can all be customized by the user.
+    
 
 <a name="hardware"></a>
 
