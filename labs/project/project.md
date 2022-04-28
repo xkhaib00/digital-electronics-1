@@ -108,6 +108,12 @@ It then outputs the received data on the rx_data port . A high-to-low transition
 ![image](images/UARTRX.png)
 
 
+By implementing our testbench, we can obtain this simulation for the receiver part :
+
+
+![image](sim_recieverrrr.PNG)
+
+
 <a name="top"></a>
 
 ## TOP module description and simulations
