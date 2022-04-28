@@ -31,17 +31,17 @@ To understand you can see what the packet of data can look like :
 ![Full_Adder](images/TimingDiagram.png)
 
 We need to use a clock in order to use signals, just as we did during laboratories, we use clock_enable process.
-### This design includes 1 start bit, 8 data bits and 1 stop bits.We want to creat it with State Machine structure using VHDL.
+#### This design includes 1 start bit, 8 data bits and 1 stop bits.We want to creat it with State Machine structure using VHDL.
 
-## ADVANTAGES AND DISADVANTAGES OF UARTS
+### ADVANTAGES AND DISADVANTAGES OF UARTS
 There is no perfect communication protocol, although UARTs are pretty good at what they do. Here are some advantages and disadvantages to help you decide whether they are appropriate for your project:
 
-### ADVANTAGES
+#### ADVANTAGES
     • Only two wires are used.
     • Has a parity bit that can be used to check for errors, but in our solution, we do not use it.
     • The data packet's structure can be modified as long as both sides are prepared.
     • This approach is well-documented and commonly used.
-### DISADVANTAGES
+#### DISADVANTAGES
     • The data frame size is restricted to a maximum of 9 bits.
     • Multiple slave or master systems are not supported.
     • Each UART's baud rates must be within ten percent of one another.
