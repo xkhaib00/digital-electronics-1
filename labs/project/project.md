@@ -124,7 +124,7 @@ By implementing our testbench, we can obtain this simulation for the receiver pa
 
 ## Video
 
-Write your text here
+https://youtu.be/H3bKAqbIBBU
 
 <a name="references"></a>
 
