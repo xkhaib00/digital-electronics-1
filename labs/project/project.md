@@ -111,7 +111,7 @@ It then outputs the received data on the rx_data port . A high-to-low transition
 By implementing our testbench, we can obtain this simulation for the receiver part :
 
 
-![image](sim_recieverrrr.PNG)
+![image](images/sim_recieverrrr.PNG)
 
 
 <a name="top"></a>
