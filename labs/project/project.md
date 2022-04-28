@@ -146,5 +146,5 @@ We used several websites to get informed on UART protocol, here are the links we
     
     • Github cheat sheet
     
-    • We would also like to thanks our teacher Tomas Fryza to have the knowledge necessary for the successful completion of our project.
+    • We would also like to thanks our teacher doc. Ing. Tomas Fryza Ph.D. to have the knowledge necessary for the successful completion of our project.
     
