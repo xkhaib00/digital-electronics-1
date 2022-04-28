@@ -125,7 +125,7 @@ We used several websites to get informed on UART protocol, here are the links we
     
     • Maual reference for Nexys board : https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual?redirect=1
     
-    •Github cheat sheet
+    • Github cheat sheet
     
     • We would also like to thanks our teacher Tomas Fryza to have the knowledge necessary for the successful completion of our project.
     
