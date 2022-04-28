@@ -112,6 +112,7 @@ Write your text here
 ## References
 
 We used several websites to get informed on UART protocol, here are the links were we used some knowledge.
+
     • To understand UART transmission with some image of data bus :https://www.analog.com/en/analog-dialogue/articles/uart-a-hardware-communication-protocol.html
     
     • Knowledge to create block diagram : https://www.codrey.com/embedded-systems/uart-serial-communication-rs232/
