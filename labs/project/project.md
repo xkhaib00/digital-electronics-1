@@ -2,9 +2,9 @@
 
 ### Team members
 
-* Štěpán Večeřa (responsible for xxx)
-* Romain Fresneau (responsible for xxx)
-* Rishat Khaibullin (responsible for xxx)
+* Štěpán Večeřa 
+* Romain Fresneau 
+* Rishat Khaibullin 
 
 ### Table of contents
 
@@ -111,4 +111,13 @@ Write your text here
 
 ## References
 
-1. Write your text here.
+We used several websites to get informed on UART protocol, here are the links were we used some knowledge.
+    • To understand UART transmission with some image of data bus :https://www.analog.com/en/analog-dialogue/articles/uart-a-hardware-communication-protocol.html
+    • Knowledge to create block diagram : https://www.codrey.com/embedded-systems/uart-serial-communication-rs232/
+    • Basics about this technologies, applications and adv/dis : https://microcontrollerslab.com/uart-communication-working-applications/
+    • We really struggled on how to use baud rate, to understand, we used this : https://resources.altium.com/p/serial-communications-protocols-part-two-uart
+    • Interpretations of simulations : https://forum.digikey.com/t/uart-vhdl/12670
+    • Maual reference for Nexys board : https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual?redirect=1
+    •Github cheat sheet
+    • We would also like to thanks our teacher Tomas Fryza to have the knowledge necessary for the successful completion of our project.
+    
