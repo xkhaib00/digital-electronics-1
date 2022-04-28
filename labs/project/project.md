@@ -54,7 +54,13 @@ This UART is a programmable logic component with a simple asynchronous serial in
 
 ## Hardware description
 
-Write your text here.
+We performed the following steps to implement the UART design on the Nexys A7 board. In fact we used two of them, one is used to be the transmitting entity, the second one is the receiving entity.
+
+For this design, we are only in half duplex, wich means only one of the board can transmit data. That is why we only use two wires, one for the ground and one for transmitting data in parrallel.
+
+The transmitting board use switches from 0 to 7 to transmit data, the receiving board use LED to let the user see that the data are correctly read.
+Here you can see the block diagram of our complete solution :
+
 
 <a name="modules"></a>
 
